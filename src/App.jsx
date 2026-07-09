@@ -181,11 +181,9 @@ if (ageGroup) {
     >
       <div
   style={{
-    border: "1px solid #444",
-    borderRadius: "12px",
     padding: "20px",
     marginBottom: "20px",
-    backgroundColor: "#151515"
+    textAlign: "center"
   }}
 >
   <h1
@@ -222,16 +220,6 @@ if (ageGroup) {
     padding: "20px",
     marginBottom: "20px"
   }}
-> 
-      <h2>Athlete Information</h2>
-
-      <div
-  style={{
-    border: "1px solid #444",
-    borderRadius: "12px",
-    padding: "20px",
-    marginBottom: "20px"
-  }}
 >
   <h2
     style={{
@@ -252,10 +240,7 @@ if (ageGroup) {
     }}
   >
     <div>
-      <label>
-        Competition Year
-      </label>
-
+      <label>Competition Year</label>
       <br />
 
       <select
@@ -266,49 +251,33 @@ if (ageGroup) {
           )
         }
       >
-        <option value={2026}>
-          2026
-        </option>
-
-        <option value={2027}>
-          2027
-        </option>
-
-        <option value={2028}>
-          2028
-        </option>
+        <option value={2026}>2026</option>
+        <option value={2027}>2027</option>
+        <option value={2028}>2028</option>
       </select>
     </div>
 
     <div>
-      <label>
-        Date of Birth
-      </label>
-
+      <label>Date of Birth</label>
       <br />
 
       <input
         type="date"
         value={dob}
         onChange={(e) =>
-          setDob(
-            e.target.value
-          )
+          setDob(e.target.value)
         }
       />
     </div>
 
     <div>
       <label>Sex</label>
-
       <br />
 
       <select
         value={sex}
         onChange={(e) =>
-          setSex(
-            e.target.value
-          )
+          setSex(e.target.value)
         }
       >
         <option value="male">
@@ -322,25 +291,23 @@ if (ageGroup) {
     </div>
 
     <div>
-      <label>
-        Age Group
-      </label>
+      <label>Age Group</label>
 
       <div
-  style={{
-    backgroundColor: "#14532d",
-    color: "white",
-    padding: "8px 12px",
-    borderRadius: "999px",
-    display: "inline-block",
-    fontWeight: "bold"
-  }}
->
-  {ageGroup}
-</div>
+        style={{
+          marginTop: "8px",
+          backgroundColor: "#14532d",
+          color: "#fff",
+          padding: "8px 12px",
+          borderRadius: "999px",
+          display: "inline-block",
+          fontWeight: "bold"
+        }}
+      >
+        {ageGroup || "-"}
+      </div>
     </div>
   </div>
-</div>
 </div>
       <hr />
 
@@ -390,8 +357,7 @@ points =
       border: "1px solid #444",
       borderRadius: "10px",
       padding: "15px",
-      backgroundColor: "#151515",
-      boxShadow:
+          boxShadow:
         "0 2px 4px rgba(0,0,0,0.3)"
     }}
   >

@@ -1,0 +1,434 @@
+{
+  "year": 2026,
+
+  "ageRule": {
+    "type": "dec31",
+    "description": "Age is determined as of December 31 of the competition year."
+  },
+
+  "scoreRules": {
+    "13-14": {
+      "triathlonTotal": ["triathlon", "swim", "ride", "run"],
+      "aquathlonTotal": ["aquathlon", "swim", "run"]
+    },
+    "15-16": {
+      "triathlonTotal": ["triathlon", "swim", "ride", "run"],
+      "aquathlonTotal": ["aquathlon", "swim", "run"]
+    },
+    "16-21": {
+      "triathlonTotal": ["triathlon", "swim", "ride", "run", "runRace"],
+      "aquathlonTotal": ["aquathlon", "swim", "run", "runRace"]
+    }
+  },
+
+  "ageGroups": {
+    "13-14": {
+      "minAge": 13,
+      "maxAge": 14,
+
+      "male": {
+        "considerationThresholds": {
+          "triathlon": 3526,
+          "aquathlon": 2815
+        },
+
+        "events": {
+          "triathlon": {
+            "factorOffset": 1499,
+            "name": "Super Sprint Triathlon",
+            "standardTime": "00:46:00",
+            "automaticQualifyingTime": "00:41:30",
+            "equation": {
+              "degree": 4,
+              "coefficients": [7e-11, -3e-07, -0.0002, -0.2009, 2500]
+            }
+          },
+
+          "aquathlon": {
+            "factorOffset": 779,
+            "name": "Super Sprint Aquathlon",
+            "standardTime": "00:22:00",
+            "automaticQualifyingTime": "00:22:00",
+            "equation": {
+              "degree": 5,
+              "coefficients": [-2e-12, 6e-09, -6e-06, 0.0011, -0.3306, 2001.8]
+            }
+          },
+
+          "swim": {
+            "factorOffset": 217,
+            "name": "400m Swim",
+            "standardTime": "00:06:10",
+            "equation": {
+              "degree": 4,
+              "coefficients": [6e-09, -8e-06, -0.0005, -0.2547, 900]
+            }
+          },
+
+          "run": {
+            "factorOffset": 204,
+            "name": "1.5Km Run TT",
+            "standardTime": "00:06:15",
+            "equation": {
+              "degree": 4,
+              "coefficients": [-5e-09, 2e-07, -0.0005, -0.3612, 454.73]
+            }
+          },
+
+          "ride": {
+            "factorOffset": 719,
+            "name": "10Km Ride TT",
+            "standardTime": "00:19:50",
+            "equation": {
+              "degree": 4,
+              "coefficients": [2e-10, -3e-07, -0.0005, -0.0937, 999.3]
+            }
+          }
+        }
+      },
+
+      "female": {
+        "considerationThresholds": {
+          "triathlon": 3569,
+          "aquathlon": 2868
+        },
+
+        "events": {
+          "triathlon": {
+            "factorOffset": 1799,
+            "name": "Super Sprint Triathlon",
+            "standardTime": "00:50:00",
+            "automaticQualifyingTime": "00:46:30",
+            "equation": {
+              "degree": 4,
+              "coefficients": [1e-10, -4e-07, -7e-05, -0.1968, 2496.3]
+            }
+          },
+
+          "aquathlon": {
+            "factorOffset": 1019,
+            "name": "Super Sprint Aquathlon",
+            "standardTime": "00:26:00",
+            "automaticQualifyingTime": "00:23:45",
+            "equation": {
+              "degree": 5,
+              "coefficients": [3e-15, -3e-12, -8e-09, -0.0007, -0.1289, 1997.1]
+            }
+          },
+
+          "swim": {
+            "factorOffset": 234,
+            "name": "400m Swim",
+            "standardTime": "00:06:40",
+            "equation": {
+              "degree": 4,
+              "coefficients": [2e-08, -2e-05, 0.0016, -0.3981, 900]
+            }
+          },
+
+          "run": {
+            "factorOffset": 227,
+            "name": "1.5Km Run TT",
+            "standardTime": "00:07:15",
+            "equation": {
+              "degree": 4,
+              "coefficients": [-2e-08, 1e-05, -0.0031, -0.1137, 450.04]
+            }
+          },
+
+          "ride": {
+            "factorOffset": 719,
+            "name": "10Km Ride TT",
+            "standardTime": "00:21:30",
+            "equation": {
+              "degree": 4,
+              "coefficients": [2e-10, -3e-07, -0.0005, -0.0937, 999.3]
+            }
+          }
+        }
+      }
+    },
+
+    "15-16": {
+  "minAge": 15,
+  "maxAge": 16,
+
+  "male": {
+
+    "considerationThresholds": {
+      "triathlon": 3944,
+      "aquathlon": 2927
+    },
+
+    "events": {
+      "triathlon": {
+        "factorOffset": 1499,
+        "name": "Super Sprint Triathlon",
+        "standardTime": "00:42:00",
+        "automaticQualifyingTime": "00:38:00",
+        "equation": {
+          "degree": 4,
+          "coefficients": [7e-11, -3e-07, -0.0002, -0.2009, 2500]
+        }
+      },
+
+      "aquathlon": {
+        "factorOffset": 779,
+        "name": "Super Sprint Aquathlon",
+        "standardTime": "00:21:00",
+        "automaticQualifyingTime": "00:18:30",
+        "equation": {
+          "degree": 5,
+          "coefficients": [-2e-12, 6e-09, -6e-06, 0.0011, -0.3306, 2001.8]
+        }
+      },
+
+      "swim": {
+        "factorOffset": 217,
+        "name": "400m Swim",
+        "standardTime": "00:05:45",
+        "equation": {
+          "degree": 4,
+          "coefficients": [6e-09, -8e-06, -0.0005, -0.2547, 900]
+        }
+      },
+
+      "run": {
+        "factorOffset": 204,
+        "name": "1.5Km Run TT",
+        "standardTime": "00:06:00",
+        "equation": {
+          "degree": 4,
+          "coefficients": [-5e-09, 2e-07, -0.0005, -0.3612, 454.73]
+        }
+      },
+
+      "ride": {
+        "factorOffset": 719,
+        "name": "10Km Ride TT",
+        "standardTime": "00:18:30",
+        "equation": {
+          "degree": 4,
+          "coefficients": [2e-10, -3e-07, -0.0005, -0.0937, 999.3]
+        }
+      }
+    }
+  },
+
+      "female": {
+        "considerationThresholds": {
+          "triathlon": 3986,
+          "aquathlon": 3056
+        },
+        "events": {
+          "triathlon": {
+            "factorOffset": 1799,
+            "name": "Super Sprint Triathlon",
+            "standardTime": "00:50:00",
+            "automaticQualifyingTime": "00:46:30",
+            "equation": {
+              "degree": 4,
+              "coefficients": [1e-10, -4e-07, -7e-05, -0.1968, 2496.3]
+            }
+          },
+
+          "aquathlon": {
+            "factorOffset": 1019,
+            "name": "Super Sprint Aquathlon",
+            "standardTime": "00:26:00",
+            "automaticQualifyingTime": "00:23:45",
+            "equation": {
+              "degree": 5,
+              "coefficients": [3e-15, -3e-12, -8e-09, -0.0007, -0.1289, 1997.1]
+            }
+          },
+
+          "swim": {
+            "factorOffset": 234,
+            "name": "400m Swim",
+            "standardTime": "00:06:40",
+            "equation": {
+              "degree": 4,
+              "coefficients": [2e-08, -2e-05, 0.0016, -0.3981, 900]
+            }
+          },
+
+          "run": {
+            "factorOffset": 227,
+            "name": "1.5Km Run TT",
+            "standardTime": "00:07:15",
+            "equation": {
+              "degree": 4,
+              "coefficients": [-2e-08, 1e-05, -0.0031, -0.1137, 450.04]
+            }
+          },
+
+          "ride": {
+            "factorOffset": 719,
+            "name": "10Km Ride TT",
+            "standardTime": "00:21:30",
+            "equation": {
+              "degree": 4,
+              "coefficients": [2e-10, -3e-07, -0.0005, -0.0937, 999.3]
+            }
+          }
+        }
+      }
+    },
+    
+
+    "16-21": {
+      "minAge": 17,
+      "maxAge": 21,
+
+      "male": {
+        "considerationThresholds": {
+          "triathlon": 3746,
+          "aquathlon": 2742
+        },
+
+        "events": {
+          "triathlon": {
+            "factorOffset": 2999,
+            "name": "Sprint Triathlon",
+            "standardTime": "01:09:00",
+            "automaticQualifyingTime": "01:06:00",
+            "equation": {
+              "degree": 3,
+              "coefficients": [8e-09, -0.0005, -0.0606, 2500]
+            }
+          },
+
+          "aquathlon": {
+            "factorOffset": 1679,
+            "name": "Sprint Aquathlon",
+            "standardTime": "00:37:00",
+            "automaticQualifyingTime": "00:33:00",
+            "equation": {
+              "degree": 5,
+              "coefficients": [3e-12, -8e-09, 7e-06, -0.0038, 0.2551, 1987]
+            }
+          },
+
+          "swim": {
+            "factorOffset": 449,
+            "name": "800m Swim",
+            "standardTime": "00:10:40",
+            "equation": {
+              "degree": 2,
+              "coefficients": [-0.0027, -0.0679, 900]
+            }
+          },
+
+          "run": {
+            "factorOffset": 434,
+            "name": "3Km Run TT",
+            "standardTime": "00:10:05",
+            "equation": {
+              "degree": 4,
+              "coefficients": [-3e-11, 7e-07, -0.0014, 0.1327, 393.4]
+            }
+          },
+
+          "ride": {
+            "factorOffset": 1619,
+            "name": "20Km Ride TT",
+            "standardTime": "00:33:30",
+            "equation": {
+              "degree": 4,
+              "coefficients": [-1e-09, 1e-06, -0.0013, -0.1282, 999.08]
+            }
+          },
+
+          "runRace": {
+            "factorOffset": 754,
+            "name": "5K Race",
+            "standardTime": "00:19:00",
+            "equation": {
+              "degree": 2,
+              "coefficients": [-0.0007, -0.1831, 784.78]
+            }
+          }
+        }
+      },
+
+      "female": {
+        "considerationThresholds": {
+          "triathlon": 4153,
+          "aquathlon": 2677
+        },
+
+        "events": {
+          "triathlon": {
+            "factorOffset": 3599,
+            "name": "Sprint Triathlon",
+            "standardTime": "01:25:00",
+            "automaticQualifyingTime": "01:20:00",
+            "equation": {
+              "degree": 4,
+              "coefficients": [6e-11, -4e-07, 0.0006, -0.443, 2500]
+            }
+          },
+
+          "aquathlon": {
+            "factorOffset": 1979,
+            "name": "Sprint Aquathlon",
+            "standardTime": "00:45:00",
+            "automaticQualifyingTime": "00:42:00",
+            "equation": {
+              "degree": 4,
+              "coefficients": [-2e-09, 4e-06, -0.0031, 0.2242, 1985]
+            }
+          },
+
+          "swim": {
+            "factorOffset": 479,
+            "name": "800m Swim",
+            "standardTime": "00:12:00",
+            "equation": {
+              "degree": 3,
+              "coefficients": [-4e-06, 0.001, -0.3034, 900]
+            }
+          },
+
+          "run": {
+            "factorOffset": 479,
+            "name": "3Km Run TT",
+            "standardTime": "00:13:00",
+            "equation": {
+              "degree": 4,
+              "coefficients": [-2e-09, 1e-06, -0.0004, -0.0678, 399.68]
+            }
+          },
+
+          "ride": {
+            "factorOffset": 1859,
+            "name": "20Km Ride TT",
+            "standardTime": "00:38:00",
+            "equation": {
+              "degree": 4,
+              "coefficients": [-1e-09, 2e-06, -0.0015, -0.0482, 1000]
+            }
+          },
+
+          "runRace": {
+            "factorOffset": 833,
+            "name": "5K Race",
+            "standardTime": "00:24:30",
+            "equation": {
+              "degree": 3,
+              "coefficients": [-4e-07, 0.0002, -0.146, 800]
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "disclaimers": [
+    "Achieving a consideration score does not guarantee selection to the CARIFTA Team.",
+    "Automatic qualification is determined only by attaining the published automatic qualifying standard times in a previously sanctioned race.",
+    "Foreign-based athletes must achieve the automatic qualifying times for national team selection. Consideration score eligibility is not available to foreign-based athletes.",
+    "Athletes must automatically qualify in both Triathlon and Aquathlon to be eligible for selection by the National Team Coaches to compete in both events at CARIFTA."
+  ]
+}

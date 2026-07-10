@@ -1,7 +1,8 @@
 import { getTimeDifference } from "./utils/timeDifference";
 import { metAutomaticStandard } from "./utils/timeComparison";
 import { useState } from "react";
-import data from "./data/2026.json";
+import data2025 from "./data/2025.json";
+import data2026 from "./data/2026.json";
 import { getAgeGroup } from "./utils/ageCalculator";
 import { timeToSeconds } from "./utils/timeConverter";
 import { calculatePoints } from "./utils/pointsCalculator";
@@ -9,6 +10,9 @@ import { calculatePoints } from "./utils/pointsCalculator";
 function App() {
   const [competitionYear, setCompetitionYear] =
     useState(2026);
+
+  const [pointsModelYear, setPointsModelYear] =
+  useState("2026");
 
   const [dob, setDob] =
     useState("");
@@ -19,11 +23,15 @@ function App() {
   const [eventTimes, setEventTimes] =
     useState({});
 
-  const ageGroup = getAgeGroup(
-    dob,
-    competitionYear
-  );
+  const ageGroup = getAgeGroup( dob, competitionYear);
 
+  const datasets = {
+  2025: data2025,
+  2026: data2026
+};
+
+const data =
+  datasets[pointsModelYear];
   const events =
     data.ageGroups?.[ageGroup]?.[sex]?.events ||
     {};
@@ -154,11 +162,7 @@ if (ageGroup) {
       );
   }
 }
-  console.log(
-    "Events Keys:",
-    Object.keys(events)
-  );
-
+  
   const handleTimeChange = (
   eventKey,
   value
@@ -194,9 +198,9 @@ if (ageGroup) {
     margin: "0 0 15px 0"
   }}
 >
-  CARIFTA Multisport Points &
+  CARIFTA Triathlon & Aquathlon
   <br />
-  Selection Calculator
+  Calculator
 </h1>
 
   <p>
@@ -210,6 +214,53 @@ if (ageGroup) {
     only the athlete's fastest
     performance should be entered.
   </p>
+  <div
+  style={{
+    border: "2px dashed #888",
+    borderRadius: "12px",
+    padding: "15px",
+    marginTop: "20px",
+    textAlign: "center"
+  }}
+>
+  <div
+    style={{
+      fontSize: "0.85rem",
+      opacity: 0.7,
+      marginBottom: "5px"
+    }}
+  >
+    OFFICIAL PARTNER
+  </div>
+
+  <div
+    style={{
+      fontSize: "1.3rem",
+      fontWeight: "bold"
+    }}
+  >
+    Advertise Here
+  </div>
+
+  <div
+    style={{
+      marginTop: "8px",
+      fontSize: "0.9rem"
+    }}
+  >
+    Reach athletes, parents, coaches and
+    sporting organizations across Trinidad & Tobago.
+  </div>
+
+  <div
+    style={{
+      marginTop: "10px",
+      fontWeight: "bold"
+    }}
+  >
+    Contact us for sponsorship opportunities
+  </div>
+</div>
 </div>
 
       <hr />
@@ -292,8 +343,10 @@ if (ageGroup) {
 
     <div>
       <label>Age Group</label>
+      <br />
 
       <div
+      
         style={{
           marginTop: "8px",
           backgroundColor: "#14532d",
@@ -309,9 +362,43 @@ if (ageGroup) {
     </div>
   </div>
 </div>
+<div>
+  <label>
+    Points Model Year
+  </label>
+
+  <br />
+
+  <select
+    value={pointsModelYear}
+    onChange={(e) =>
+      setPointsModelYear(
+        e.target.value
+      )
+    }
+  >
+    <option value="2025">
+      2025
+    </option>
+
+    <option value="2026">
+      2026
+    </option>
+
+  </select>
+</div>
       <hr />
 
       <h2>Eligible Events</h2>
+
+      <p
+  style={{
+    textAlign: "center",
+    opacity: 0.7
+  }}
+>
+  Points Model: {pointsModelYear}
+</p>
 
       {Object.keys(events).length >
       0 ? (
@@ -459,6 +546,15 @@ points =
     <h2>
       Event Score Summary
     </h2>
+
+    <p
+  style={{
+    textAlign: "center",
+    opacity: 0.7
+  }}
+>
+  Points Model: {pointsModelYear}
+</p>
 
     <table
       style={{
@@ -685,11 +781,29 @@ points =
           {eventTimes.triathlon || "-"}
         </p>
 
-        <p>
+        <p
+          style={{
+            color:
+              triathlonAutomaticAchieved
+                ? "lightgreen"
+                : "tomato",
+            fontWeight: "bold"
+          }}
+        >
           {triathlonAutomaticAchieved
             ? "✅ Automatic Qualification Standard Achieved"
             : "❌ Automatic Qualification Standard Not Achieved"}
         </p>
+
+<p
+  style={{
+    textAlign: "center",
+    opacity: 0.7
+  }}
+>
+  Points Model: {pointsModelYear}
+</p>
+
       </div>
 
       <div
@@ -737,11 +851,29 @@ points =
           {eventTimes.aquathlon || "-"}
         </p>
 
-        <p>
+        <p
+          style={{
+            color:
+              aquathlonAutomaticAchieved
+                ? "lightgreen"
+                : "tomato",
+            fontWeight: "bold"
+          }}
+        >
           {aquathlonAutomaticAchieved
             ? "✅ Automatic Qualification Standard Achieved"
             : "❌ Automatic Qualification Standard Not Achieved"}
         </p>
+
+        <p
+  style={{
+    textAlign: "center",
+    opacity: 0.7
+  }}
+>
+  Points Model: {pointsModelYear}
+</p>
+                       
       </div>
     </div>
   </>
@@ -760,7 +892,7 @@ points =
     cursor: "pointer"
   }}
 >
-  Clear Results
+  Reset Calculator
 </button>
 <hr />
 
@@ -779,10 +911,20 @@ points =
   style={{
     textAlign: "center",
     marginTop: "40px",
-    color: "#777"
+    color: "#8b0707"
   }}
 >
-  Trinidad & Tobago Triathlon Federation
+  For demonstration purposes only. Not for official use.
+  No information provided by this calculator should be used for official selection purposes. Please refer to the official CARIFTA Triathlon and Aquathlon Selection Policy for official information.
+</p>
+<p
+  style={{
+    textAlign: "center",
+    opacity: 0.7
+  }}
+>
+  CARIFTA Multisport Calculator
+  | Points Model {pointsModelYear}
 </p>
 </div>
 
